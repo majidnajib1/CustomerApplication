@@ -1,0 +1,54 @@
+﻿<div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <h4>Search By Customer ID</h4>
+
+
+    @using (Ajax.BeginForm("GetByID", "Reports", null, new AjaxOptions { UpdateTargetId = "result", InsertionMode = InsertionMode.Replace, HttpMethod = "POST" }))
+    {
+
+        <div class="form-group">
+
+            @Html.Label("Enter Customer ID ", new { @class = "control-label col-md-2" })
+            
+            @Html.Editor("id", new { htmlAttributes = new { @class = "form-control" } })
+
+            <input type="submit" value="Search" class="btn btn-default" />
+        </div>
+
+        
+    }
+    <h4>Search By Customer City</h4>
+
+    @using (Ajax.BeginForm("GetByCity", "Reports", null, new AjaxOptions { UpdateTargetId = "result", InsertionMode = InsertionMode.Replace, HttpMethod = "POST" }))
+    {
+
+        <div class="form-group">
+
+            @Html.Label("Enter Customer City ", new { @class = "control-label col-md-2" })
+
+            @Html.Editor("city", new { htmlAttributes = new { @class = "form-control" } })
+
+            <input type="submit" value="Search" class="btn btn-default" />
+        </div>
+
+
+    }
+    <h4>Search By Customer County</h4>
+
+    @using (Ajax.BeginForm("GetByCounty", "Reports", null, new AjaxOptions { UpdateTargetId = "result", InsertionMode = InsertionMode.Replace, HttpMethod = "POST" }))
+    {
+
+        <div class="form-group">
+
+            @Html.Label("Enter Customer County ", new { @class = "control-label col-md-2" })
+
+            @Html.Editor("county", new { htmlAttributes = new { @class = "form-control" } })
+
+            <input type="submit" value="Search" class="btn btn-default" />
+        </div>
+
+
+    }
+    <div id="result"></div>
+</div>
